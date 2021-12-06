@@ -1,0 +1,26 @@
+<!-- <app-komponen1 [komponen1Title]="title"></app-komponen1>
+
+<input #inputData>
+
+<button (click)="showMessage(inputData.value)">SEND ME</button>
+
+
+<div *ngFor="let m of messages" index ="m">
+    <span> {{m}}</span>
+</div>
+
+<div *ngIf = "message.length > 0 "> 
+{{message}}
+</div>
+
+<app-komponen2 (clickHandler)="showMessage($event)"></app-komponen2> -->
+
+
+<h2>Angular Directives</h2>
+<input #userName>
+<button (click)="login(userName.value)">Login</button>
+<button (click)="logout()">Logout</button>
+
+<div *ngIf= "checkLoginState()">
+    <h3>Hallo, {{userData.name}} !</h3>
+</div>

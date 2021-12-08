@@ -22,7 +22,7 @@ export class AllCountriesComponent implements OnInit {
     this.countries = this.countryService.getCountries();
   }
 
-  toggleHome() {
+  toggleAllCountries() {
     this.isAllCountries = !this.isAllCountries;
   }
 }

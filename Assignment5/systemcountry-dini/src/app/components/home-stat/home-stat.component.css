@@ -1,0 +1,32 @@
+.country-unit {
+    width: 200px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.country-block {
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    height: 150px;
+    background-color: #3D550C;
+    border-radius: 2px;
+}
+
+.country-block:hover {
+  background-color: #81B622;
+  cursor: pointer;
+  color:white;
+}
+
+h2, h3, h4, p {
+  margin: 10px;
+}
+
+.nounderline {
+    text-decoration: none !important
+  }
+
+.container {
+    text-align: center;
+  }

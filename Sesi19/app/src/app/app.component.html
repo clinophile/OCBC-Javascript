@@ -1,0 +1,92 @@
+<app-header [headerTitle]="title"></app-header>
+
+Lihat source code jika ingin melihat cara kerjanya.
+
+<h2>Angular Data Binding</h2>
+
+<h3>Interpolation dengan tanda <code>{{ "{{}}" }}</code></h3>
+
+{{ "Hai, ini adalah tulisan hasil interpolation!" }}
+
+<h4>Ketika tombol pertama di bawah diklik, akan muncul pesan di bawah ini</h4>
+
+{{ message }}
+
+<h3>Property Binding dengan <code>[]</code></h3>
+
+<h3>Event Binding dengan <code>()</code></h3>
+
+<app-footer (clickHandler)="showMessage($event)"></app-footer>
+
+<h2>Angular Expressions</h2>
+
+Sebagian besar sudah ada pada contoh di atas, maka hanya bagian lain yang akan di-cover di sini.
+
+<h3>Variable Template</h3>
+
+<input #inputData>
+<button (click)="showMessage(inputData.value)">Send Me</button>
+
+<h2>Angular Directives</h2>
+
+<h3>Penggunaan <code>*ngIf</code> untuk conditional</h3>
+
+<input #userName>
+<button (click)="login(userName.value)">Login</button>
+
+<div *ngIf="checkLoginState()">
+  <h3>Halo, {{ userData.name }}!</h3>
+</div>
+
+<h3>Penggunaan <code>*ngFor</code> untuk looping</h3>
+
+<div *ngFor="let m of messages" index="m">
+  <span>{{ m }}</span>
+</div>
+
+<h3>Penggunaan <code>*ngSwitch</code> untuk conditional</h3>
+
+<p>
+  NOTE: Data di bawah ini berubah berdasarkan status login pada contoh <code>*ngIf</code> di atas.
+</p>
+
+<div [ngSwitch]="checkLoginState()">
+  <div *ngSwitchCase="true">User sudah login dengan nama {{ userData.name }}</div>
+  <div *ngSwitchCase="false">User belum login.</div>
+</div>
+
+<h2>ANGULAR PIPES</h2>
+
+<p>DIBAWAH INI CONTOH PIPE : FORMATTING OUTPUT DATA DALAM INTERPOLATION</p>
+<div>{{ messages | json }}</div>
+
+<div> [1] My birthdate is : {{birthdate}}</div>
+<div> [2] My birthdate is : {{birthdate | date}}</div>
+<div> [3] My birthdate is : {{birthdate | date: "dd MMM, yyyy"}}</div>
+
+<h4>FORMAT DATE</h4>
+<ul>
+  <li>M > bulan tanpa 0 di depannya</li>
+  <li>MM > bulan dengan 0 di depannya</li>
+  <li>MMM > nama bulan dengan singkatan</li>
+  <li>MMMM > nama bulan penuh</li>
+  <li>yy > tahun 2 digit terakhir (00-99)</li>
+  <li>yyyy > tahun penuh</li>
+  <li>d > tanggal  tanpa 0 di depannya</li>
+  <li>dd > tanggal penuh / dengan 0 di depannya</li>
+</ul>
+
+<h4>PIPES: CHAINING</h4>
+<div> [1] My birthdate is : {{birthdate}}</div>
+<div> [2] My birthdate is : {{birthdate | date | uppercase}}</div>
+<div> [3] My birthdate is : {{birthdate | date: "dd-MMMM-yyyy" | uppercase}}</div>
+
+<h4>Custom Pipe</h4>
+<div> {{7200000 | customFileSize}} </div>
+<div> {{7200000 | customFileSize: 'GB'}} </div>
+
+<h4>MODULE</h4>
+<app-media></app-media>
+
+<h4>View Encapsulation</h4>
+<app-shadowdom-encapsulation></app-shadowdom-encapsulation>

@@ -1,0 +1,22 @@
+<div class="tombol">   
+    <div *ngIf="isAllCountries">
+        <div class="d-flex justify-content-center">
+            <button (click)="toggleHome()" class=" btn btn-dark" routerLink="/home-stat">Go back to Homepage</button>
+            <button (click)="toggleHome()" class=" btn btn-dark ms-2" disabled routerLink="/all-countries"> List all of
+                countries </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center">List of All Countries</h2>
+    <div class="group">
+        <a *ngFor="let country of countries" routerLink="/detail/{{country.name}}" class=" nounderline country-unit">
+            <div class="country-block">
+                <h4>{{country.name}}</h4>
+                <p> Capital : <br>
+                {{country.capital | uppercase}}</p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="tombol">
+  <div *ngIf="isHome">
+    <div class="d-flex justify-content-center">
+      <button (click)="toggleHome()" class=" btn btn-dark" disabled routerLink="/home-stat">Go back to Homepage</button>
+      <button (click)="toggleHome()" class=" btn btn-dark ms-2" routerLink="/all-countries"> List all of countries
+      </button>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <h2 class="text-center">Three Most Populated Countries</h2>
+    <div class="group">
+      <a *ngFor="let country of populatedCountries" routerLink="/detail/{{country.name}}"
+        class=" nounderline country-unit">
+        <div class="country-block">
+          <h4>{{country.name}}</h4>
+          <p> {{country.population | number}}</p>
+        </div>
+      </a>
+    </div>
+
+    <br>
+    <h2 class="text-center">Three Largest Countries (Area)</h2>
+    <div class="group justify-content-center">
+      <a *ngFor="let country of areaCountries" routerLink="/detail/{{country.name}}" class="nounderline country-unit">
+        <div class="country-block">
+          <h4>{{country.name}}</h4>
+          <p> {{country.area | number}} km<sup>2</sup> </p>
+        </div>
+      </a>
+    </div>
+
+    <br>
+    <h2 class="text-center">Three Countries with Highest GDP</h2>
+    <div class="group justify-content-center">
+      <a *ngFor="let country of gdpCountries" routerLink="/detail/{{country.name}}" class="nounderline country-unit">
+        <div class="country-block">
+          <h4>{{country.name}}</h4>
+          <p> {{country.area | number}} USD </p>
+        </div>
+      </a>
+    </div>
+
+  </div>
